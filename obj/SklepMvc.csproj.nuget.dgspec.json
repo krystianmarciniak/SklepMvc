@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {}
+    "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {
+    "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
+        "projectUniqueName": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
         "projectName": "SklepMvc",
-        "projectPath": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
+        "projectPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
         "packagesPath": "C:\\Users\\kryst\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\obj\\",
+        "outputPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kryst\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +56,12 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[8.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
