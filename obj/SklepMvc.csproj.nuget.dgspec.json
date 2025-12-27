@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {}
+    "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {
+    "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
+        "projectUniqueName": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
         "projectName": "SklepMvc",
-        "projectPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
+        "projectPath": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\SklepMvc.csproj",
         "packagesPath": "C:\\Users\\kryst\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\obj\\",
+        "outputPath": "c:\\Users\\kryst\\Documents\\53 Pr zaaw\\SklepMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kryst\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,8 +62,10 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[10.0.1, )"
             }
           },
           "imports": [
