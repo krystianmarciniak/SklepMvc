@@ -7,17 +7,14 @@ public class Order
 {
     public int Id { get; set; }
 
-    [Required, StringLength(40)]
-    public string OrderNumber { get; set; } = string.Empty;
-
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
-
-    [Required, StringLength(30)]
-    public string Status { get; set; } = "Nowe";
-
     [Required]
-    public string UserId { get; set; } = string.Empty;
-    public IdentityUser? User { get; set; }
+    public string UserId { get; set; } = default!;
+    public IdentityUser User { get; set; } = default!;
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+
+    public decimal TotalPrice =>
+        Items.Sum(i => i.UnitPrice * i.Quantity);
 }

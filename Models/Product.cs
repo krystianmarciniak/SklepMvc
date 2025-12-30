@@ -6,17 +6,17 @@ public class Product
 {
   public int Id { get; set; }
 
-  [Required, StringLength(100)]
-  public string Name { get; set; } = "";
+  [Required]
+  [StringLength(80, MinimumLength = 2)]
+  public string Name { get; set; } = string.Empty;
 
-  [StringLength(500)]
+  [StringLength(400)]
   public string? Description { get; set; }
 
-  [Range(0.01, 100000)]
+  [Range(0.01, 1_000_000)]
+  [DataType(DataType.Currency)]
   public decimal Price { get; set; }
 
-  [Range(0, 100000)]
-  public int Stock { get; set; } = 0;
-
-  public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+  [Range(0, 100_000)]
+  public int Stock { get; set; }
 }

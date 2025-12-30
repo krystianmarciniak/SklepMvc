@@ -1,0 +1,21 @@
+@model SklepMvc.Models.Product
+
+@{
+  ViewData["Title"] = "Usuń produkt";
+}
+
+<h2>Usuń produkt</h2>
+
+<p class="text-danger">Czy na pewno chcesz usunąć ten produkt?</p>
+
+<div class="mb-3">
+  <strong>@Model.Name</strong><br />
+  Cena: @Model.Price.ToString("0.00")<br />
+  Stan: @Model.Stock
+</div>
+
+<form asp-action="Delete" method="post">
+  <input type="hidden" asp-for="Id" />
+  <button type="submit" class="btn btn-danger">Usuń</button>
+  <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
