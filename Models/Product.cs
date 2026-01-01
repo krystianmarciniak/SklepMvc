@@ -4,6 +4,7 @@ namespace SklepMvc.Models;
 
 public class Product
 {
+  public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
   public int Id { get; set; }
 
   [Required]

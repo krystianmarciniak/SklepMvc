@@ -4,19 +4,17 @@ namespace SklepMvc.Models;
 
 public class OrderItem
 {
-  public int Id { get; set; }
+    public int Id { get; set; }
 
-  [Required]
-  public int OrderId { get; set; }
-  public Order Order { get; set; } = default!;
+    public int OrderId { get; set; }
+    public Order? Order { get; set; }
 
-  [Required]
-  public int ProductId { get; set; }
-  public Product Product { get; set; } = default!;
+    public int ProductId { get; set; }
+    public Product? Product { get; set; }
 
-  [Range(1, 1000)]
-  public int Quantity { get; set; }
+    [Range(1, 100_000)]
+    public int Quantity { get; set; }
 
-  [Range(0.01, 100000)]
-  public decimal UnitPrice { get; set; }
+    [Range(0.01, 1_000_000)]
+    public decimal UnitPrice { get; set; }
 }

@@ -30,6 +30,14 @@
           <a asp-action="Details" asp-route-id="@p.Id">Szczegóły</a> |
           <a asp-action="Edit" asp-route-id="@p.Id">Edytuj</a> |
           <a asp-action="Delete" asp-route-id="@p.Id">Usuń</a>
+
+          <form asp-controller="Orders" asp-action="CreateQuick" method="post" style="display:inline;">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="productId" value="@p.Id" />
+            <input type="hidden" name="quantity" value="1" />
+            <button type="submit" class="btn btn-sm btn-outline-success">Kup 1</button>
+          </form>
+
         </td>
       </tr>
     }

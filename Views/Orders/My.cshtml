@@ -1,0 +1,48 @@
+@model IEnumerable<SklepMvc.Models.Order>
+
+@{
+    ViewData["Title"] = "Moje zamówienia";
+}
+
+<h2>Moje zamówienia</h2>
+
+@if (!Model.Any())
+{
+    <p>Nie masz jeszcze żadnych zamówień.</p>
+}
+else
+{
+    @foreach (var order in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                <strong>Zamówienie #@order.Id</strong> |
+                Data: @order.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+            </div>
+
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Cena</th>
+                            <th>Ilość</th>
+                            <th>Suma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in order.Items)
+                        {
+                            <tr>
+                                <td>@item.Product.Name</td>
+                                <td>@item.UnitPrice.ToString("0.00") zł</td>
+                                <td>@item.Quantity</td>
+                                <td>@(item.UnitPrice * item.Quantity).ToString("0.00") zł</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+}

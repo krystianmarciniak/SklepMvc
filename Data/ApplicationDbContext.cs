@@ -7,14 +7,11 @@ namespace SklepMvc.Data;
 public class ApplicationDbContext : IdentityDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-    {
-    }
+        : base(options) { }
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
-
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -34,11 +31,10 @@ public class ApplicationDbContext : IdentityDbContext
 
         builder.Entity<Product>()
             .Property(p => p.Price)
-            .HasPrecision(10, 2);
+            .HasPrecision(18, 2);
 
         builder.Entity<OrderItem>()
             .Property(i => i.UnitPrice)
-            .HasPrecision(10, 2);
+            .HasPrecision(18, 2);
     }
-
 }
