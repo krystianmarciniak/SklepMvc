@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SklepMvc.Data;
 using SklepMvc.Models;
+using SklepMvc.Helpers;
 
 namespace SklepMvc.Controllers;
 
@@ -33,6 +34,12 @@ public class OrdersController : Controller
     return View(orders);
   }
 
+  public async Task<IActionResult> Index()
+  {
+    return await My();
+  }
+
+
   [HttpPost]
   [ValidateAntiForgeryToken]
   public async Task<IActionResult> CreateQuick(int productId, int quantity)
@@ -60,7 +67,8 @@ public class OrdersController : Controller
     var order = new Order
     {
       UserId = userId,
-      CreatedAt = DateTime.UtcNow
+      CreatedAt = DateTime.UtcNow,
+      Items = new List<OrderItem>()
     };
 
     var item = new OrderItem
@@ -73,6 +81,7 @@ public class OrdersController : Controller
     order.Items.Add(item);
 
     product.Stock -= quantity;
+    _db.Products.Update(product);
 
     _db.Orders.Add(order);
     await _db.SaveChangesAsync();
@@ -80,5 +89,55 @@ public class OrdersController : Controller
     await tx.CommitAsync();
 
     return RedirectToAction(nameof(My));
+  }
+  [HttpPost]
+  [ValidateAntiForgeryToken]
+  public async Task<IActionResult> Checkout()
+  {
+    var cart = HttpContext.Session.GetObject<List<CartItem>>("CART");
+    if (cart == null || !cart.Any())
+      return RedirectToAction("Index", "Cart");
+
+    var userId = _userManager.GetUserId(User)!;
+
+    await using var tx = await _db.Database.BeginTransactionAsync();
+
+    var order = new Order
+    {
+      UserId = userId,
+      CreatedAt = DateTime.UtcNow,
+      Items = new List<OrderItem>()
+    };
+
+    foreach (var c in cart)
+    {
+      var product = await _db.Products.FirstOrDefaultAsync(p => p.Id == c.ProductId);
+      if (product == null)
+        continue;
+
+      if (product.Stock < c.Quantity)
+        continue;
+
+      product.Stock -= c.Quantity;
+
+      order.Items.Add(new OrderItem
+      {
+        ProductId = product.Id,
+        Quantity = c.Quantity,
+        UnitPrice = c.UnitPrice
+      });
+    }
+
+    if (!order.Items.Any())
+      return RedirectToAction("Index", "Cart");
+
+    _db.Orders.Add(order);
+    await _db.SaveChangesAsync();
+
+    await tx.CommitAsync();
+
+    HttpContext.Session.Remove("CART");
+
+    return RedirectToAction("My");
   }
 }

@@ -12,36 +12,50 @@
 }
 else
 {
-    @foreach (var order in Model)
+    foreach (var order in Model)
     {
         <div class="card mb-3">
             <div class="card-header">
-                <strong>Zamówienie #@order.Id</strong> |
-                Data: @order.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+                <strong>Zamówienie #@order.Id</strong>
+                <span class="ms-2 text-muted">
+                    Data: @order.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+                </span>
             </div>
 
             <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>Produkt</th>
-                            <th>Cena</th>
-                            <th>Ilość</th>
-                            <th>Suma</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in order.Items)
-                        {
+                @if (order.Items == null || !order.Items.Any())
+                {
+                    <p>Brak pozycji w tym zamówieniu.</p>
+                }
+                else
+                {
+                    <table class="table table-sm">
+                        <thead>
                             <tr>
-                                <td>@item.Product.Name</td>
-                                <td>@item.UnitPrice.ToString("0.00") zł</td>
-                                <td>@item.Quantity</td>
-                                <td>@(item.UnitPrice * item.Quantity).ToString("0.00") zł</td>
+                                <th>Produkt</th>
+                                <th>Cena</th>
+                                <th>Ilość</th>
+                                <th>Suma</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in order.Items)
+                            {
+                                <tr>
+                                    <td>@item.Product?.Name</td>
+                                    <td>@item.UnitPrice.ToString("0.00") zł</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@(item.UnitPrice* item.Quantity).ToString("0.00") zł</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <p class="text-end">
+                        <strong>Łączna kwota:</strong>
+                        @(order.Items.Sum(i => i.UnitPrice * i.Quantity).ToString("0.00")) zł
+                    </p>
+                }
             </div>
         </div>
     }

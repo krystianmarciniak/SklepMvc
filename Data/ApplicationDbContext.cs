@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SklepMvc.Models;
+
 
 namespace SklepMvc.Data;
 
@@ -25,7 +27,7 @@ public class ApplicationDbContext : IdentityDbContext
 
         builder.Entity<OrderItem>()
             .HasOne(i => i.Product)
-            .WithMany()
+            .WithMany(p => p.OrderItems)
             .HasForeignKey(i => i.ProductId)
             .OnDelete(DeleteBehavior.Restrict);
 

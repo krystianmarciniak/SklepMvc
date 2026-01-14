@@ -27,17 +27,23 @@
         <td>@p.Price.ToString("0.00")</td>
         <td>@p.Stock</td>
         <td>
-          <a asp-action="Details" asp-route-id="@p.Id">Szczegóły</a> |
-          <a asp-action="Edit" asp-route-id="@p.Id">Edytuj</a> |
+          <a asp-action="Details" asp-route-id="@p.Id">Szczegóły</a>
+          <a asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
           <a asp-action="Delete" asp-route-id="@p.Id">Usuń</a>
 
-          <form asp-controller="Orders" asp-action="CreateQuick" method="post" style="display:inline;">
+          <form asp-controller="Cart" asp-action="Add" method="post" class="d-inline">
             @Html.AntiForgeryToken()
             <input type="hidden" name="productId" value="@p.Id" />
             <input type="hidden" name="quantity" value="1" />
-            <button type="submit" class="btn btn-sm btn-outline-success">Kup 1</button>
+            <button class="btn btn-sm btn-success">Dodaj do koszyka</button>
           </form>
 
+          <form asp-controller="Orders" asp-action="CreateQuick" method="post" class="d-inline ms-2">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="productId" value="@p.Id" />
+            <input type="hidden" name="quantity" value="1" />
+            <button class="btn btn-sm btn-outline-primary">Kup teraz</button>
+          </form>
         </td>
       </tr>
     }

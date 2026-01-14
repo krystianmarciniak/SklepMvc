@@ -1,0 +1,63 @@
+@model List<SklepMvc.Models.CartItem>
+
+@{
+  ViewData["Title"] = "Koszyk";
+  var total = Model.Sum(i => i.UnitPrice * i.Quantity);
+}
+
+<h2>Koszyk</h2>
+
+@if (!Model.Any())
+{
+  <p>Koszyk jest pusty.</p>
+}
+else
+{
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+        <th>Suma</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+      {
+        <tr>
+          <td>@item.Name</td>
+          <td>@item.UnitPrice.ToString("0.00") zł</td>
+          <td>@item.Quantity</td>
+          <td>@(item.UnitPrice * item.Quantity).ToString("0.00") zł</td>
+          <td>
+            <form asp-action="Remove" method="post">
+              @Html.AntiForgeryToken()
+              <input type="hidden" name="productId" value="@item.ProductId" />
+              <button class="btn btn-sm btn-danger">Usuń</button>
+            </form>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <form asp-controller="Orders" asp-action="Checkout" method="post">
+    @Html.AntiForgeryToken()
+    <button class="btn btn-primary">Złóż zamówienie</button>
+  </form>
+
+  <p class="text-end"><strong>Razem:</strong> @total.ToString("0.00") zł</p>
+
+  <form asp-action="Clear" method="post">
+    @Html.AntiForgeryToken()
+    <button class="btn btn-secondary">Wyczyść koszyk</button>
+  </form>
+
+  <hr />
+
+  <p class="text-muted">
+    (Następny krok: „Złóż zamówienie” — zrobimy to jako osobny przycisk i zapis do Orders/OrderItems.)
+  </p>
+}
