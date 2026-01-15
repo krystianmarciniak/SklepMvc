@@ -39,23 +39,23 @@ Użytkownicy
 
 ## Struktura projektu
 
-SklepMvc/
-├── Controllers/
+SklepMvc
+├── Controllers
 │ ├── ProductsController.cs
 │ ├── CartController.cs
 │ └── OrdersController.cs
-├── Models/
+├── Models
 │ ├── Product.cs
 │ ├── CartItem.cs
 │ ├── Order.cs
 │ └── OrderItem.cs
-├── Helpers/
+├── Helpers
 │ └── SessionExtensions.cs
-├── Views/
-│ ├── Products/
-│ ├── Cart/
-│ └── Orders/
-├── Data/
+├── Views
+│ ├── Products
+│ ├── Cart
+│ └── Orders
+├── Data
 │ └── ApplicationDbContext.cs
 ├── Program.cs
 └── app.db
