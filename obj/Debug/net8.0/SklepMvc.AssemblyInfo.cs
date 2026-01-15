@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SklepMvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0319988cdfee0145954804351fd868663f1269cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+490624696da89c896ebd3fc09bab3043789c2357")]
 [assembly: System.Reflection.AssemblyProductAttribute("SklepMvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SklepMvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

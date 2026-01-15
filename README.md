@@ -15,11 +15,14 @@ Projekt został zrealizowany jako praca zaliczeniowa z przedmiotu Programowanie 
 - ASP.NET Identity (logowanie użytkownika)
 - Git + GitHub
 
-# Funkcjonalności aplikacji
+### Funkcjonalności aplikacji
 - Produkty
 - wyświetlanie listy produktów
 - dodawanie, edycja i usuwanie produktów
 - prezentacja ceny oraz stanu magazynowego
+Widok administracyjny umożliwiający zarządzanie typami ćwiczeń dostępnymi w systemie.
+
+![Produkty](./screenshots/1_Produkty.png)
 
 Koszyk (Session)
 - dodawanie produktów do koszyka
@@ -39,28 +42,28 @@ Użytkownicy
 
 ## Struktura projektu
 
-SklepMvc
-├── Controllers
+SklepMvc/
+├── Controllers/
 │ ├── ProductsController.cs
 │ ├── CartController.cs
 │ └── OrdersController.cs
-├── Models
+├── Models/
 │ ├── Product.cs
 │ ├── CartItem.cs
 │ ├── Order.cs
 │ └── OrderItem.cs
-├── Helpers
+├── Helpers/
 │ └── SessionExtensions.cs
-├── Views
-│ ├── Products
-│ ├── Cart
-│ └── Orders
-├── Data
+├── Views/
+│ ├── Products/
+│ ├── Cart/
+│ └── Orders/
+├── Data/
 │ └── ApplicationDbContext.cs
 ├── Program.cs
 └── app.db
 
-Uruchomienie projektu lokalnie
+## Uruchomienie projektu lokalnie
 
 1. Sklonuj repozytorium:
 git clone https://github.com/krystianmarciniak/SklepMvc.git
@@ -74,14 +77,9 @@ dotnet run
 4. Otwórz w przeglądarce:
 http://localhost:5245
 
-Stan projektu
-
-Projekt jest ukończony w zakresie wymaganym do zaliczenia i prezentuje:
-
-poprawną architekturę MVC
-
-rozdzielenie odpowiedzialności (Controllers / Models / Views)
-
-praktyczne użycie sesji i bazy danych
-
-działający proces zakupowy end‑to‑end
+## Stan projektu
+# Projekt jest ukończony w zakresie wymaganym do zaliczenia i prezentuje:
+- poprawną architekturę MVC
+- rozdzielenie odpowiedzialności (Controllers / Models / Views)
+- praktyczne użycie sesji i bazy danych
+- działający proces zakupowy end‑to‑end
