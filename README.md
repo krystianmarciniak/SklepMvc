@@ -1,11 +1,11 @@
-SklepMvc
-Opis projektu
+### SklepMvc
+## Opis projektu
 
 SklepMvc to aplikacja webowa typu sklep internetowy, wykonana w technologii ASP.NET Core MVC z wykorzystaniem Entity Framework Core oraz SQLite jako bazy danych.
 
 Projekt został zrealizowany jako praca zaliczeniowa z przedmiotu Programowanie zaawansowane i przedstawia kompletny, działający przepływ zakupowy użytkownika – od przeglądania produktów, przez koszyk, aż do składania i przeglądania zamówień.
 
-Zastosowane technologie
+# Zastosowane technologie
 
 - ASP.NET Core MVC (.NET 8)
 - Entity Framework Core
@@ -15,7 +15,7 @@ Zastosowane technologie
 - ASP.NET Identity (logowanie użytkownika)
 - Git + GitHub
 
-Funkcjonalności aplikacji
+# Funkcjonalności aplikacji
 Produkty
 
 wyświetlanie listy produktów
