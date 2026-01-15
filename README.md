@@ -20,7 +20,8 @@ Projekt został zrealizowany jako praca zaliczeniowa z przedmiotu Programowanie 
 - wyświetlanie listy produktów
 - dodawanie, edycja i usuwanie produktów
 - prezentacja ceny oraz stanu magazynowego
-Widok administracyjny umożliwiający zarządzanie typami ćwiczeń dostępnymi w systemie.
+
+# Widok administracyjny umożliwiający zarządzanie funkcjonalnościami aplikacji w systemie.
 
 ![Produkty](./screenshots/1_Produkty.png)
 
@@ -30,15 +31,29 @@ Koszyk (Session)
 - czyszczenie koszyka
 - automatyczne liczenie sumy
 
+# Widok Koszyk (Session).
+
+![Koszyk](./screenshots/2_Koszyk.png)
+
 Zamówienia
 - składanie zamówienia na podstawie koszyka
 - zapis zamówienia i pozycji zamówienia w bazie danych
 - lista zamówień zalogowanego użytkownika
 - szczegóły zamówienia (produkty, ilości, ceny)
 
+# Widok Zamówienia (Session).
+
+![Zamówienia](./screenshots/3_Zamowienia.png)
+
+
+
 Użytkownicy
 - logowanie i wylogowanie użytkownika
 - przypisanie zamówień do konkretnego użytkownika
+
+# Widok Użytkownicy (Session).
+
+![Użytkownicy](./screenshots/4_Uzytkownicy.png)
 
 ## Struktura projektu
 
