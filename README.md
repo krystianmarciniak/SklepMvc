@@ -16,41 +16,28 @@ Projekt został zrealizowany jako praca zaliczeniowa z przedmiotu Programowanie 
 - Git + GitHub
 
 # Funkcjonalności aplikacji
-Produkty
-
-wyświetlanie listy produktów
-
-dodawanie, edycja i usuwanie produktów
-
-prezentacja ceny oraz stanu magazynowego
+- Produkty
+- wyświetlanie listy produktów
+- dodawanie, edycja i usuwanie produktów
+- prezentacja ceny oraz stanu magazynowego
 
 Koszyk (Session)
-
-dodawanie produktów do koszyka
-
-usuwanie pojedynczych pozycji
-
-czyszczenie koszyka
-
-automatyczne liczenie sumy
+- dodawanie produktów do koszyka
+- usuwanie pojedynczych pozycji
+- czyszczenie koszyka
+- automatyczne liczenie sumy
 
 Zamówienia
-
-składanie zamówienia na podstawie koszyka
-
-zapis zamówienia i pozycji zamówienia w bazie danych
-
-lista zamówień zalogowanego użytkownika
-
-szczegóły zamówienia (produkty, ilości, ceny)
+- składanie zamówienia na podstawie koszyka
+- zapis zamówienia i pozycji zamówienia w bazie danych
+- lista zamówień zalogowanego użytkownika
+- szczegóły zamówienia (produkty, ilości, ceny)
 
 Użytkownicy
+- logowanie i wylogowanie użytkownika
+- przypisanie zamówień do konkretnego użytkownika
 
-logowanie i wylogowanie użytkownika
-
-przypisanie zamówień do konkretnego użytkownika
-
-Struktura projektu
+## Struktura projektu
 
 SklepMvc/
 ├── Controllers/
