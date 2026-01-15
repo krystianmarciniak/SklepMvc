@@ -1,4 +1,6 @@
 bin/
 obj/
-*.db-wal
+*.db
 *.db-shm
+*.db-wal
+.vs/

@@ -56,25 +56,25 @@ Użytkownicy
 ![Użytkownicy](./screenshots/4_Uzytkownicy.png)
 
 ## Struktura projektu
-
+```text
 SklepMvc/
 ├── Controllers/
-│ ├── ProductsController.cs
-│ ├── CartController.cs
-│ └── OrdersController.cs
+│   ├── ProductsController.cs
+│   ├── CartController.cs
+│   └── OrdersController.cs
 ├── Models/
-│ ├── Product.cs
-│ ├── CartItem.cs
-│ ├── Order.cs
-│ └── OrderItem.cs
+│   ├── Product.cs
+│   ├── CartItem.cs
+│   ├── Order.cs
+│   └── OrderItem.cs
 ├── Helpers/
-│ └── SessionExtensions.cs
+│   └── SessionExtensions.cs
 ├── Views/
-│ ├── Products/
-│ ├── Cart/
-│ └── Orders/
+│   ├── Products/
+│   ├── Cart/
+│   └── Orders/
 ├── Data/
-│ └── ApplicationDbContext.cs
+│   └── ApplicationDbContext.cs
 ├── Program.cs
 └── app.db
 
